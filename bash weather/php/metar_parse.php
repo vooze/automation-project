@@ -6,8 +6,8 @@ if(mysqli_connect_errno())
  echo "Error connecting to database\n";
  exit;
 }
-/*Open the text file fetched from NOAA – assuming that the files are saved in a sub-folder called metars, relative to where the script is run from*/
-$metar_file=fopen("./metars/".gmdate('H')."Z.TXT", "r");
+//Open the text file fetched from NOAA
+$metar_file=fopen("~/weather/".gmdate('H')."Z.TXT", "r");
 //Read file a line at a time
 while($metar=fgets($metar_file, 500))
 {
