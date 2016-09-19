@@ -1,6 +1,6 @@
 <?php
 //Connect to the database
-$db=new mysqli('localhost','local_user','wordpass','metar');
+$db=new mysqli('localhost','read-user','Passw0rd','metar');
 if(mysqli_connect_errno())
 {
  echo "Error connecting to database\n";
