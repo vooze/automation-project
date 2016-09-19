@@ -7,7 +7,7 @@ if(mysqli_connect_errno())
  exit;
 }
 //Open the text file fetched from NOAA
-$metar_file=fopen("~/weather/".gmdate('H')."Z.TXT", "r");
+$metar_file=fopen("/home/vagrant//weather/".gmdate('H')."Z.TXT", "r");
 //Read file a line at a time
 while($metar=fgets($metar_file, 500))
 {
