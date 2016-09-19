@@ -18,7 +18,7 @@ while($metar=fgets($metar_file, 500))
  $icao=substr($metar,0,4);
  $time=substr($metar,7,4);
  $report=substr($metar,13);
- $query="REPLACE INTO reports VALUES('$icao','$time','$report')";
+ $query="REPLACE INTO metar VALUES('$icao','$time','$report')";
  $result=$db->query($query);
  }
 }
