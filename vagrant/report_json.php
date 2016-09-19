@@ -3,7 +3,7 @@
  $q=$_GET["icao"];
  /*Make a new database connection, user=web_user, password=password,
  database= metar*/
- @ $db = new mysqli('192.168.33.11','read-user','Passw0rd','metar');
+ @ $db = new mysqli('192.168.33.11','read-user','Passw0rd','weatherdb');
  if (mysqli_connect_errno())
  {
  echo "Error: Could not connect to database";
@@ -16,9 +16,7 @@
  for ($i = 0; $i <$num_results; $i++)
  {
  $row = $result->fetch_assoc();
-$arr = array('icao' => $row['icao'], 'time' => $row['time'],
-'report' => str_replace("\n", '', $row['report']);
-
+ $arr = array('icao' => $row['icao'], 'time' => $row['time'],'report' => str_replace("\n", '', $row['report']);
  /* get the JSON printed */
  echo json_encode($arr);
  }
