@@ -3,7 +3,7 @@
  $q=$_GET["icao"];
  /*Make a new database connection, user=web_user, password=password,
  database= metar*/
- @ $db = new mysqli('localhost','web_user','password','metar');
+ @ $db = new mysqli('192.168.33.11','read-user','Passw0rd','metar');
  if (mysqli_connect_errno())
  {
  echo "Error: Could not connect to database";
