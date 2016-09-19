@@ -1,6 +1,6 @@
 <?php
 //Connect to the database
-$db=new mysqli('localhost','read-user','Passw0rd','metar');
+$db=new mysqli('localhost','root','rootpass','weatherdb');
 if(mysqli_connect_errno())
 {
  echo "Error connecting to database\n";
