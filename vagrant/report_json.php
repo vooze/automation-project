@@ -10,13 +10,14 @@
  exit;
  }
  //Find the report for the ICAO code in the database
- $query = "select * from reports where icao = '".$q."'";
+ $query = "select * from metar where icao = '".$q."'";
  $result = $db->query($query);
  $num_results = $result->num_rows;
  for ($i = 0; $i <$num_results; $i++)
  {
  $row = $result->fetch_assoc();
- $arr = array('icao' => $row['icao'], 'time' => $row['time'],'report' => str_replace("\n", '', $row['report']);
+ /*$arr = array('icao' => $row['icao'], 'time' => $row['time], 'report' => $row['report']); */
+ $arr = array('icao' => $row['icao'], 'time' => $row['time'], 'report' => str_replace("\n", '', $row['report']));
  /* get the JSON printed */
  echo json_encode($arr);
  }
