@@ -5,9 +5,11 @@ URL="http://tgftp.nws.noaa.gov/data/observations/metar/cycles/"$CT"Z.TXT"
 
 if  [ -d "/home/vagrant/weather" ]; then
 wget -O "/home/vagrant/weather/"$CT"Z.TXT" $URL
+php -f /home/vagrant/automation-project/bash-weather/metar_parse.php
 echo "The folder 'weather' already exists"
 else
 mkdir "/home/vagrant/weather"
 wget -O "/home/vagrant/weather/"$CT"Z.TXT" $URL
+php -f /home/vagrant/automation-project/bash-weather/metar_parse.php
 echo "The folder 'weather' did not exist, so it was created."
 fi
