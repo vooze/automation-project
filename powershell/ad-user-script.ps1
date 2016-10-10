@@ -27,7 +27,7 @@ do
      }
      Else
      {
-     Show-Menu –Title "JOKKE's AD + PS script"
+     Show-Menu â€“Title "JOKKE's AD + PS script"
      $input = Read-Host "Please make a selection"
      switch ($input)
      {
